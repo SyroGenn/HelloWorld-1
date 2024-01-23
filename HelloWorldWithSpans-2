@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/helloWorld.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      :root {
+        --short: 13px;
+        --normal: 25px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+      }
+
+      span {
+        background-color: black;
+        height: 3px;
+        display: inline-block;
+        position: relative;
+      }
+
+      /* H */
+
+      .H span:nth-child(1) {
+        width: var(--normal);
+        transform: rotate(90deg);
+      }
+
+      .H span:nth-child(2) {
+        width: 12px;
+        right: 16px;
+      }
+
+      .H span:nth-child(3) {
+        transform: rotate(90deg);
+        width: var(--normal);
+        right: 32px;
+      }
+
+      /* H */
+
+      /* E */
+
+      .E span:nth-child(1) {
+        transform: rotate(90deg);
+        width: var(--normal);
+        right: 32px;
+      }
+
+      .E span:nth-child(2) {
+        width: 10px;
+        right: 48px;
+      }
+
+      .E span:nth-child(3) {
+        width: var(--short);
+        right: 63px;
+        top: 11px;
+      }
+
+      .E span:nth-child(4) {
+        width: var(--short);
+        right: 80px;
+        bottom: 11px;
+      }
+
+      /* E */
+
+      /* L */
+
+      .L span:nth-child(1) {
+        width: var(--normal);
+        right: 64px;
+        transform: rotate(90deg);
+      }
+
+      .L span:nth-child(2) {
+        width: var(--short);
+        right: 80px;
+        top: 11px;
+      }
+
+      /* L */
+
+      /* O */
+
+      .O span:nth-child(1) {
+        width: var(--short);
+        right: 64px;
+        transform: rotate(-50deg);
+        bottom: 4px;
+      }
+
+      .O span:nth-child(2) {
+        width: var(--short);
+        right: 74px;
+        transform: rotate(50deg);
+        bottom: 4px;
+      }
+
+      .O span:nth-child(3) {
+        width: var(--short);
+        right: 99px;
+        transform: rotate(50deg);
+        bottom: -5px;
+      }
+
+      .O span:nth-child(4) {
+        width: var(--short);
+        right: 109px;
+        transform: rotate(-50deg);
+        bottom: -5px;
+      }
+
+      /* O */
+
+      /* W */
+
+      .W {
+        right: 40px;
+        position: relative;
+      }
+
+      .W span:nth-child(1) {
+        transform: rotate(250deg);
+        width: var(--normal);
+      }
+
+      .W span:nth-child(2) {
+        transform: rotate(-250deg);
+        width: var(--normal);
+        right: 21px;
+      }
+
+      .W span:nth-child(3) {
+        transform: rotate(250deg);
+        width: var(--normal);
+        right: 43px;
+      }
+
+      .W span:nth-child(4) {
+        transform: rotate(-250deg);
+        width: var(--normal);
+        right: 64px;
+      }
+
+      /* W */
+
+      /* O 2 */
+
+      .O2 {
+        position: relative;
+        right: 30px;
+      }
+
+      /* O 2 */
+
+      /* R */
+
+      .R {
+        position: relative;
+        right: 60px;
+      }
+
+      .R span:nth-child(1) {
+        transform: rotate(90deg);
+        width: var(--normal);
+        right: 64px;
+      }
+
+      .R span:nth-child(2) {
+        transform: rotate(35deg);
+        width: var(--short);
+        right: 82px;
+        bottom: 7px;
+      }
+
+      .R span:nth-child(3) {
+        transform: rotate(-40deg);
+        width: var(--short);
+        right: 100px;
+        bottom: 0px;
+      }
+
+      .R span:nth-child(4) {
+        transform: rotate(42deg);
+        width: 15px;
+        right: 117px;
+        top: 7px;
+      }
+
+      /* R */
+
+      /* L2 */
+
+      .L2 {
+        position: relative;
+        right: 90px;
+      }
+
+      /* L2 */
+
+      /* D */
+
+      .D {
+        position: relative;
+        right: 30px;
+      }
+
+      .D span:nth-child(1) {
+        transform: rotate(90deg);
+        width: var(--normal);
+        right: 117px;
+      }
+
+      .D span:nth-child(2) {
+        transform: rotate(45deg);
+        width: 15px;
+        right: 135px;
+        bottom: 5px;
+      }
+
+      .D span:nth-child(3) {
+        transform: rotate(-50deg);
+        width: 15px;
+        right: 155px;
+        top: 6px;
+      }
+
+      /* D */
+
+      .animatedNormal {
+        animation: forNormal 3s ease-in-out forwards;
+      }
+
+      .animatedShort {
+        animation: forShort 3s ease-in-out forwards;
+      }
+
+      .animatedCustom {
+        animation: forCustom 3s ease-in-out forwards;
+      }
+
+      .animated10px {
+        animation: for10px 3s ease-in-out forwards;
+      }
+
+      .main {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        animation: bottomToTop 1s ease-in-out;
+      }
+
+      @keyframes bottomToTop {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0%);
+        }
+      }
+
+      @keyframes forNormal {
+        from {
+          scale: 0;
+          opacity: 0;
+        }
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @keyframes forShort {
+        from {
+          scale: 0;
+          opacity: 0;
+        }
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @keyframes forCustom {
+        from {
+          scale: 0;
+          opacity: 0;
+        }
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @keyframes for10px {
+        from {
+          scale: 0;
+          opacity: 0;
+        }
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        .normalWidth {
+          width: 10px !important;
+        }
+        .shortWidth {
+          width: 10px !important;
+        }
+        .customWidth {
+          width: 10px !important;
+        }
+      }
+    </style>
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <div class="H">
+          <span class="normalWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="normalWidth"></span>
+        </div>
+        <div class="E">
+          <span class="normalWidth"></span>
+          <span class="10px"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+        <div class="L">
+          <span class="normalWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+        <div class="L">
+          <span class="normalWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+        <div class="O">
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+
+        <div class="W">
+          <span class="normalWidth"></span>
+          <span class="normalWidth"></span>
+          <span class="normalWidth"></span>
+          <span class="normalWidth"></span>
+        </div>
+        <div class="O O2">
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+        <div class="R">
+          <span class="normalWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="shortWidth"></span>
+          <span class="customWidth"></span>
+        </div>
+        <div class="L L2">
+          <span class="normalWidth"></span>
+          <span class="shortWidth"></span>
+        </div>
+        <div class="D">
+          <span class="normalWidth"></span>
+          <span class="customWidth"></span>
+          <span class="customWidth"></span>
+        </div>
+      </div>
+    </section>
+    <script src="scripts/helloWorld.js"></script>
+    <script>
+      const spans = document.querySelectorAll("span");
+      const normals = document.getElementsByClassName("normalWidth");
+      const shorts = document.getElementsByClassName("shortWidth");
+      const custom = document.getElementsByClassName("customWidth");
+      const px10 = document.getElementsByClassName("10px");
+
+      for (let i = 0; i < normals.length; i++) {
+        normals[i].classList.add("animatedNormal");
+      }
+
+      for (let i = 0; i < shorts.length; i++) {
+        shorts[i].classList.add("animatedShort");
+      }
+
+      for (let i = 0; i < custom.length; i++) {
+        custom[i].classList.add("animatedCustom");
+      }
+
+      px10[0].classList.add("animated10px");
+    </script>
+  </body>
+</html>
